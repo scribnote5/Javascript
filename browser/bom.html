@@ -1,0 +1,40 @@
+// BOM
+
+/*
+[BOM]
+브라우저와 운영체제에 대한 정보
+*/
+<script>
+    console.log(navigator.userAgent); // "chrome"
+    console.log(navigator.language); // "ko"
+    console.log(navigator.cookieEnabled); // true
+    console.log(navigator.vendor); // "Google Inc"
+
+    /*
+    [screen]
+    화면 정보
+    */
+    console.log(screen.availHeight); // 1080
+    console.log(screen.availWidth); // 1920
+    console.log(screen.colorDepth); // 24
+
+    /*
+     [location]
+     주소에 대한 정보
+     */
+    console.log(location.host);
+    console.log(location.hostname);
+    console.log(location.protocol); //
+    console.log(location.href);
+    console.log(location.pathname);
+
+    /*
+     [history]
+     */
+    histroy.go(1); // 앞으로 가기
+    histroy.go(-1); // 뒤로 가기
+    histroy.length(); // 뒤로가기 할 수 있는 페이지 개수
+    // 페이지를 이동하지 않고 단순히 주소만 변경
+    history.pushState(객체, 제목, 주소);
+    history.replaceState(객체, 제목, 주소);
+</script>

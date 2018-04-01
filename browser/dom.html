@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <p id="test">
+        ada
+    </p>
+
+</body>
+</html>
+
+<script>
+
+    // DOM(Document Object Model)
+
+    /*
+     [DOM]
+     document를 객체로 구현
+     ex) document.head, document.body 접근 가능
+    {
+        document: {
+            html: {
+                head: {
+                    title: ...
+                },
+                body: {
+                    header: ...
+                }
+            }
+        }
+    }
+
+    미완성
+    참고 : https://www.zerocho.com/category/Javascript/post/573b4165a54b5e8427432948
+    */
+
+    // 아이디 접근
+    document.getElementById('');
+    // 네임 접근
+ //   document.getElementByName('');
+    // 클래스 접근
+    document.getElementsByClassName('');
+    // 태그 접근
+    document.getElementsByTagName('');
+
+    // css 선택자 선택
+  //  document.querySelector('');
+  //  document.querySelectorAll('');
+
+    // head 접근
+    document.head;
+    // body 접근
+    document.body;
+    document.anchors;
+    document.links;
+    document.forms;
+    document.images;
+    document.scripts;
+    document.title;
+
+    // 새로운 태그 생성, 바로 생성 x, 변수를 통해 저장
+    var div = document.createElement('div');
+    // 새로운 텍스트 생성, 바로 생성 x, 변수를 통해 저장
+    var text = document.createTextNode('text');
+    // 가짜 document 생성
+    var fragment = document.createDocumentFragment();
+
+    // 자바스크립트로 document 태그를 조작하는 것은 성능이 떨어짐
+    // 가짜 document를 만들어 추가한 후 한 번에 document에 추가시 성능 부담이 덜함
+    div.appendChild(text);
+    fragment.appendChild(div);
+    document.body.appendChild(fragment);
+
+    /*
+     [Node]
+     태그 노드, 텍스트 노드
+
+     [Element]
+     태그 노드
+
+     Node.ELEMENT_NODE : 1, Element
+     Node.TEXT_NODE : 3, 텍스트
+     Node.COMMENT_NODE : 8, 주석
+     Node.DOCUMENT_NODE : 9, Document
+     Node.DOCUMENT_TYPE_NODE : 10, DOCTYPE
+     Node.DOCUMENT_FRAGMENT_NODE : 11, Document Fragment
+
+     */
+    console.log(document.getElementById('test').nodeType);
+
+    // 자식으로 이동
+    document.body.children;
+
+    document.body.firstChild; // <header>...</header>
+    document.body.lastchild;
+    document.body.parentNode;
+    document.getElementsByTagName('main')[0].nextSibling;
+    document.getElementsByTagName('main')[0].previousSibling;
+
+    var footer = document.getElementsByTagName('footer')[0];
+    footer.innerHTML; // 'hello'
+    footer.innerHTML = 'goodbye';
+    footer.outerHTML = '<footer><b>bold</b></footer>';
+    var tag = document.getElementById('header');
+    tag.id; // 'header'
+
+    // 마지막 순서 자식 태그로 추가
+    document.body.appendChild();
+    // 선택한 자식 태그 삭제
+    document.body.removeChild(document.body.childNodes[document.body.childNodes.length - 1]); // 마지막 자식 태그 삭제
+    // 자신의 형제 태그로 추가
+    var newElement = document.createElement('div');
+    document.body.insertBefore(newElement, document.getElementById('header')); // header 이전에 새로 만든 div 태그 추가
+    // 자신을 복사
+    var clone = document.getElementsByTagName('nav')[0].cloneNode();
+
+</script>
